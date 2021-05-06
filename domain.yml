@@ -1,0 +1,88 @@
+version: "2.0"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - hello_world
+  - name
+  - mobile_no
+  - email_address
+  - request_details
+
+entities:
+  - fname
+  - mobile
+  - email
+
+actions:
+  - action_hello_world
+  - action_name
+  - action_mobile
+  - action_email
+  - action_submit
+
+forms:
+- form_info
+
+slots:
+  fname:
+    type: unfeaturized
+    auto_fill: False
+
+  mobile:
+    type: unfeaturized
+    auto_fill: False
+
+  email:
+    type: unfeaturized
+    auto_fill: False
+
+
+
+responses:
+  utter_greet:
+  - text: "Hey! How are you?"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+  utter_name:
+    - text: "Provide Name"
+
+  utter_mobile:
+    - text: "Provide Mobile"
+
+  utter_email:
+    - text: "Provide Email"
+
+  utter_request:
+    - text: "Enter Details"
+
+  utter_submit:
+    - text: "There are some values say yes or no to confirm:\n Name\\ name: {name}\n Mobile: {mobile}\n Email: {email}"
+
+
+
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

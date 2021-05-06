@@ -1,0 +1,68 @@
+version: "2.0"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+- story: hello world path
+  steps:
+  - intent: hello_world
+  - action: action_hello_world
+
+- story: name path
+  steps:
+  - intent: name
+  - action: action_name
+
+- story: mobile path
+  steps:
+  - intent: mobile
+  - action: action_mobile
+
+- story: email path
+  steps:
+  - intent: email
+  - action: action_email
+
+- story: request_details path
+  steps:
+  - intent: request_details
+  - action: utter_request
+
+#> Check_feedback_details
+- story: affirm path
+#> Check_feedback_details
+  steps:
+  - intent: affirm
+  - action: action_submit
+
+- story: deny path
+#> Check_feedback_details
+  steps:
+  - intent: deny
+  - action: utter_goodbye
